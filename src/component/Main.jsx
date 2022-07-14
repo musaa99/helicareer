@@ -68,7 +68,7 @@ const {data, searchList, searchByID, searchByName } = props;
                 <p>Data not found for: { searchList }</p>
             }
             {searchByID &&
-                <p>No record exists with ID: { searchList }</p>
+                <p>No record exists with ID: { searchByID }</p>
             }
             {searchByName &&
                 <p>No mission name found for: { searchByName }</p>
