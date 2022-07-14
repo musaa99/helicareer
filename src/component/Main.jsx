@@ -14,7 +14,6 @@ const {data, searchList, searchByID, searchByName } = props;
 
   if(data.length > 0) {
     searchedData  = data.filter(x => {
-      console.log('xxx', x)
       const userInputAll = searchList.toLowerCase();
       const userInputID = searchByID.toLowerCase();
       const userInputName = searchByName.toLowerCase();

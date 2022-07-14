@@ -3,9 +3,7 @@ import React, { useState } from 'react';
 import SearchBar from './SearchBar';
 
 const Header = (props) => {
-  const { searchAll, onChangeAll, onInputAll, onInputID, onInputName } = props;
-  const [searchListu, setSearchListu] = useState('89');
-
+  const { onInputAll, onInputID, onInputName } = props;
 
   return (
     <>

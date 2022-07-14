@@ -5,7 +5,7 @@ const SearchBar = (props) => {
   return (
     <form className = "flex items-center m-auto p-[20px] w-[fit-content]">
       <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" for={label}>
+          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor={label}>
             {label}
           </label>
           <input
