@@ -2,7 +2,7 @@ import React from 'react'
 
 const Filter = () => {
   return (
-    <div className='flex'>
+    <div className='grid lg:flex'>
         <form className="flex items-center m-auto p-[20px] w-[fit-content] ">   
             <label for="Filter" className="sr-only">Filter</label>
             <div className="relative  w-full ">

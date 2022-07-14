@@ -35,7 +35,7 @@ html, body {
   padding: 0;
 }
 
-body {
+/* body {
 
   height: 100%;
   width: 100%;
@@ -45,7 +45,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-}
+} */
 .App {
   text-align: center;
   background-color: aqua;

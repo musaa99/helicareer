@@ -1,30 +1,75 @@
-import React from 'react'
-import andriod from "../asset/andriod.svg"
+import React from "react";
+//  import "../assets/styles/Home/HowCard.css"
+//  import "../assets/styles/Home/card.sass"
+//  import "../assets/styles/Home/work.scss"
+
+
+
+import GroupOne from "../asset/HowItWorks/group_two.svg";
+// import GroupTwo from "../assets/images/Home/HowItWorks/group_two.svg";
+// import GroupThree from "../assets/images/Home/HowItWorks/group_three.svg";
 
 const Main = () => {
   return (
-    <div className='flex'>
-        {/* <div className='text-start'>11/11/2022</div>
-
-        <div className='flex '>
-            <p className='bg-[red] mr-[20px]'> hello</p>
-            <div className='flex justify-evenly'>
-
-            <div className='bg-[blue]'>Joe John</div>
-            <div className='bg-[blue]'>Status</div>
-            <div className='bg-[blue]'>Type</div>
-            </div>
-        </div> */}
-        <div className='text-start'>11/11/2022
+    <div className="how__cards">
+      <h1 className=" text-start ">11/11/2022</h1>
+     
+      <hr />
+      <div className="">
+        <div className=" grid lg:flex items-center">
+          <img src={GroupOne} alt="Group one" />
+          <h5 className="" >Step 1 - Get your link</h5>
+          <p>
+            Get your referral code Register and copy referral links or QR codes.
+          </p>
         </div>
-        <div className='w-[]'>
-            <img src={andriod} alt="" />
+       
+       
+      </div>
+      <h1 className=" text-start ">11/11/2022</h1>
+     
+      <hr />
+      <div className="">
+        <div className=" grid lg:flex items-center">
+          <img src={GroupOne} alt="Group one" />
+          <h5 className="" >Step 1 - Get your link</h5>
+          <p>
+            Get your referral code Register and copy referral links or QR codes.
+          </p>
         </div>
-
-        <div>
+       
+       
+      </div>
+      <h1 className=" text-start ">11/11/2022</h1>
+     
+      <hr />
+      <div className="">
+        <div className=" grid lg:flex items-center">
+          <img src={GroupOne} alt="Group one" />
+          <h5 className="" >Step 1 - Get your link</h5>
+          <p>
+            Get your referral code Register and copy referral links or QR codes.
+          </p>
         </div>
+       
+       
+      </div>
+      <h1 className=" text-start ">11/11/2022</h1>
+     
+      <hr />
+      <div className="">
+        <div className=" grid lg:flex items-center">
+          <img src={GroupOne} alt="Group one" />
+          <h5 className="" >Step 1 - Get your link</h5>
+          <p>
+            Get your referral code Register and copy referral links or QR codes.
+          </p>
+        </div>
+       
+       
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Main
+export default Main;
