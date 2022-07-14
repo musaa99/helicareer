@@ -39,17 +39,21 @@ const Home = () => {
       }
       {!loading &&
         <div className="w-auto mx-auto text-center">
-          <Header
-              searchAllValue={searchList}
-              onInputAll= {e => setSearchList(e.target.value)}
-              onInputID= {e => setSearchByID(e.target.value)}
-              onInputName= {e => setSearchByName(e.target.value)}
-          />
-          <Main data={launchData}
-              searchList={searchList}
-              searchByID={searchByID}
-              searchByName={searchByName}
-          />
+          <div className='mx-auto w-[80%]'>
+              <Header
+                  searchAllValue={searchList}
+                  onInputAll= {e => setSearchList(e.target.value)}
+                  onInputID= {e => setSearchByID(e.target.value)}
+                  onInputName= {e => setSearchByName(e.target.value)}
+              />
+          </div>
+          <div className=' w-[90%] sm:w-[70%] mx-auto'>
+              <Main data={launchData}
+                  searchList={searchList}
+                  searchByID={searchByID}
+                  searchByName={searchByName}
+              />
+          </div>
         </div>
       }
     </React.Fragment>
