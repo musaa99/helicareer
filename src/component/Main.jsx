@@ -8,22 +8,34 @@ import GroupOne from "../asset/HowItWorks/group_two.svg";
 // import GroupThree from "../assets/images/Home/HowItWorks/group_three.svg";
 
 const Main = (props) => {
-const {data} = props;
+const {data, searchList, searchByID, searchByName } = props;
 
-const [searchList, setSearchList] = useState('');
-
-  // console.log('Data11', data);
+  let searchedData = [];
 
   if(data.length > 0) {
-    data.filter(x => {
+    searchedData  = data.filter(x => {
+      console.log('xxx', x)
+      const userInputAll = searchList.toLowerCase();
+      const userInputID = searchByID.toLowerCase();
+      const userInputName = searchByName.toLowerCase();
       const valueOne = x.mission_name.toLowerCase();
-      const valueTwo = searchList.toLowerCase();
+      const valueThree = x.id.toLowerCase();
+      const valueFour = x.launch_year.toLowerCase();
 
       if(searchList) {
-        // const isData = data.mission_name.toLowerCase().includes(searchList.toLowerCase());
-        const isData = valueOne.includes(valueTwo);
-        // const isData = data.mission_name.toLowerCase().includes(searchList.toLowerCase()) || data.banner.toLowerCase().includes(searchList.toLowerCase());
+        const isData = valueOne.includes(userInputAll)
+            || valueFour.includes(userInputAll)
+            || valueThree.includes(userInputAll)
+        ;
         return isData;
+      }
+      else if(searchByID) {
+          const isData = valueThree.includes(userInputID);
+          return isData;
+      }
+      else if(searchByID) {
+          const isData = valueOne.includes(userInputName);
+          return isData;
       }
       else {
         return data
@@ -33,7 +45,7 @@ const [searchList, setSearchList] = useState('');
 
   return (
       <div>
-        {data.length > 0  && data.map((x) => (
+        {searchedData.length > 0  && searchedData.map((x) => (
             <div className="how__cards">
               <div className="py-5">
                 <h1 className=" text-start "> {x.launch_date_local} </h1>
@@ -42,6 +54,7 @@ const [searchList, setSearchList] = useState('');
                       <img src={GroupOne} alt="Group one" />
                     </div>
                     <h5 className="" >Mission Name - {x.mission_name}</h5>
+                    <h5 className="" >ID - {x.id}</h5>
                     <p>
                       {x.launch_site.site_name_long}
                     </p>
@@ -50,6 +63,19 @@ const [searchList, setSearchList] = useState('');
               <hr />
             </div>
         ))}
+        {searchedData.length === 0 &&
+          <>
+            {searchList &&
+                <p>Data not found for: { searchList }</p>
+            }
+            {searchByID &&
+                <p>No record exists with ID: { searchList }</p>
+            }
+            {searchByName &&
+                <p>No mission name found for: { searchByName }</p>
+            }
+          </>
+        }
       </div>
 );
 };

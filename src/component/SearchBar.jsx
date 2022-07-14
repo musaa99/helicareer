@@ -1,7 +1,7 @@
 import React from 'react'
 
 const SearchBar = (props) => {
-  const { label, onInput, type} = props;
+  const { label, onInput, type, value} = props;
   return (
     <form className = "flex items-center m-auto p-[20px] w-[fit-content]">
       <div className="mb-4">
@@ -14,6 +14,7 @@ const SearchBar = (props) => {
               type={type}
               placeholder={label ? `Search by ${label}` : 'Search'}
               onInput={onInput}
+              value={value}
           />
       </div>
     </form>

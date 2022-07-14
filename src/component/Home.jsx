@@ -12,25 +12,46 @@ import Main from './Main';
 const Home = () => {
 
   const { data, loading, error } = useQuery(FILMS_QUERY);
+
   const [launchData, setLaunchData] = useState([]);
+
+  const [searchList, setSearchList] = useState('');
+  const [searchByID, setSearchByID] = useState('');
+  const [searchByName, setSearchByName] = useState('');
+
 
   useEffect(() => {
     if(!loading) {
       Object.keys(data).map((x, y)=> {
         setLaunchData(data[x]);
-        // console.log('data[x]', data[x]);
       })
     }
   }, [data]);
 
 
-
   return (
     <React.Fragment>
-      <div className="w-auto mx-auto text-center">
-        <Header />
-        <Main data={launchData} />
-    </div>
+      {loading &&
+        <p> please wait, loading.....</p>
+      }
+      {error &&
+        <p> oops!, something went wrong, please reload </p>
+      }
+      {!loading &&
+        <div className="w-auto mx-auto text-center">
+          <Header
+              searchAllValue={searchList}
+              onInputAll= {e => setSearchList(e.target.value)}
+              onInputID= {e => setSearchByID(e.target.value)}
+              onInputName= {e => setSearchByName(e.target.value)}
+          />
+          <Main data={launchData}
+              searchList={searchList}
+              searchByID={searchByID}
+              searchByName={searchByName}
+          />
+        </div>
+      }
     </React.Fragment>
   )
 }
