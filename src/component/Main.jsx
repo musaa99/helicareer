@@ -32,7 +32,7 @@ const {data, searchList, searchByID, searchByName } = props;
           const isData = valueThree.includes(userInputID);
           return isData;
       }
-      else if(searchByID) {
+      else if(searchByName) {
           const isData = valueOne.includes(userInputName);
           return isData;
       }
